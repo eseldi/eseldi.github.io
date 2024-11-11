@@ -12,7 +12,7 @@
 
 /* NAV BAR */
 .navbar {
-    background-color: #a2a2a2;
+    background-color: #000000;
     height: 100%;
     width: 200px;
     position: fixed;
@@ -38,10 +38,10 @@
 
 .navbar a {
     display: block;
-    color: #000000;
+    color: rgb(0, 255, 0);
     text-decoration: none;
     padding: 10px 0;
-    border-bottom: 2px solid #000000;
+    border-bottom: 2px solid rgb(0, 255, 0);
 }
 
 /* active link >> i use text decoration instead now*/
@@ -91,31 +91,36 @@ body {
 
 
 h1 {
-    font-family: 'Open Sans', sans-serif; 
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(0, 255, 0);
 }
 
 
 p {
     font-family: Arial, sans-serif; 
-    font-size: 16px; 
+    font-size: 16px;
+    color: rgb(0, 255, 0); 
  
 }
 
 a {
     font-family: Arial, sans-serif; 
     font-size: 16px;
+    color: rgb(0, 255, 0);
 
 }
 
 /* crossed out text decoration */
 .crossed-out{
     text-decoration: line-through;
+    color: rgb(255, 255, 255);
 }
 
 
 code {
     font-family: "Courier New", monospace;
-    background-color: #ffffff; 
+    color: rgb(0, 255, 0);
+    background-color: #696969; 
     padding: 5px;
     border: 1px solid #ccc;
     display: block;
@@ -126,12 +131,14 @@ code {
 
 /* browser styles */
 body, html {
+    color: rgb(0, 255, 0);
     margin: 0;
     padding: 0;
     padding-left: 120px;
+    padding-top: 65px;
     width: 80%;
     height: 100%;
-    background-color: #3d3d3d;
+    background-color: #000000;
 
 }
 
