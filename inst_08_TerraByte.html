@@ -27,6 +27,7 @@
     <!-- Content -->
     <div class="content">
         <p>
+            
             / <a href="./inst_08_TerraByte.html" class="gl inst"><b>TerraByte</b></a>
             / <a href="./arch_12_publictothepublic.html" class="gl arch">public to the public</a>
             / <a href="./inst_07_gardenparty.html" class="gl inst">gardenparty</a>
@@ -51,7 +52,7 @@
         </p>
     </div>
 
-
+    <hr style="width: 100%; height: 1px; border: 1px solid #000000; margin: 1em 0;"></hr>
 
         <c>
             <strong>TerraByte</strong> (2024) explores the
@@ -125,18 +126,16 @@
             const instChecked = document.getElementById('inst').checked;
             const specChecked = document.getElementById('spec').checked;
             const archChecked = document.getElementById('arch').checked;
-
-
+    
             const wordsinst = document.querySelectorAll('.inst');
             const wordsspec = document.querySelectorAll('.spec');
             const wordsarch = document.querySelectorAll('.arch');
-
-
+    
             // Reset all gl effects first
             document.querySelectorAll('.gl').forEach(word => {
                 word.classList.remove('gl-inst', 'gl-spec', 'gl-arch');
             });
-
+    
             // Apply the gl effect based on checkbox selection
             if (instChecked) {
                 wordsinst.forEach(word => word.classList.add('gl-inst'));
@@ -147,17 +146,38 @@
             if (archChecked) {
                 wordsarch.forEach(word => word.classList.add('gl-arch'));
             }
-
+    
+            // Store checkbox states in sessionStorage to persist for this session
+            sessionStorage.setItem('instChecked', instChecked);
+            sessionStorage.setItem('specChecked', specChecked);
+            sessionStorage.setItem('archChecked', archChecked);
         }
-
+    
+        // Function to restore checkbox states from sessionStorage
+        function restoreCheckboxStates() {
+            const instChecked = sessionStorage.getItem('instChecked') === 'true';
+            const specChecked = sessionStorage.getItem('specChecked') === 'true';
+            const archChecked = sessionStorage.getItem('archChecked') === 'true';
+    
+            // Set the checkboxes to the stored states
+            document.getElementById('inst').checked = instChecked;
+            document.getElementById('spec').checked = specChecked;
+            document.getElementById('arch').checked = archChecked;
+    
+            // Update gl effects based on restored states
+            updateglEffects();
+        }
+    
         // Attach event listeners to checkboxes to update gl effect on change
         document.getElementById('inst').addEventListener('change', updateglEffects);
         document.getElementById('spec').addEventListener('change', updateglEffects);
         document.getElementById('arch').addEventListener('change', updateglEffects);
-
-        // Initialize gl effects when the page loads
-        updateglEffects();
+    
+        // Restore checkbox states when the page loads
+        window.addEventListener('load', restoreCheckboxStates);
     </script>
+    
+    
 
 </body>
 </html>
