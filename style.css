@@ -58,6 +58,19 @@
             font-size: 16px;
         }
 
+        .navbar-container:has(input.gl-inst:checked) {
+            box-shadow: 0 0 10px #000000; /* Match gl-inst color */
+          }
+          
+          .navbar-container:has(input.gl-spec:checked) {
+            box-shadow: 0 0 10px #ff0000; /* Match gl-spec color */
+          }
+          
+          .navbar-container:has(input.gl-arch:checked) {
+            box-shadow: 0 0 10px #00ff15; /* Match gl-arch color */
+          }
+          
+
         .checkbox-container {
             display: flex;
             gap: 15px;
