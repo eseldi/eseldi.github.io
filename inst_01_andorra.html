@@ -28,7 +28,7 @@
     <div class="content">
         <p>
             
-            / <a href="./inst_08_TerraByte.html" class="gl inst">TerraByte</a>
+            / <a href="./inst_08_TerraByte.html" class="gl inst">terrabyte</a>
             / <a href="./arch_12_publictothepublic.html" class="gl arch">public to the public</a>
             / <a href="./inst_07_gardenparty.html" class="gl inst">gardenparty</a>
             / <a href="./arch_11_demolitionparty.html" class="gl arch">demolition party</a>
@@ -55,5 +55,91 @@
 
 
         <c>
-            <strong>PROJECT</strong> INSERT TEXT
+            <strong>andorra</strong> set design and production together with heike huempfner
+theater drachengasse, vienna AT
+2016
+
+<br>
+<br>
+
+the play “andorra” written by max frisch revolves around the young Andri, told to be the Jewish adoptive son of a teacher, who tells to have rescued him from the anti-Semitic neighbors. during the play it gets revealed that andri’s 
+origin was a lie, but no one in town wants to believe it anymore. he becomes the victim of anti-semitic harassment by the fellow citizens. finally, the tragedy ends with Andri being killed by invading troops because of his faith.
+<br>
+the entire play takes place within several indoor situations and the main city square of andorra. the spatial limitations of the stage asked for a simple solution, allowing several entrances and configurations. through a set of fixed 
+and movable walls and furniture, the stage was able to adhere to the change of scenes and locations of the play. eliminating blackouts, all sets where configured by the actors on stage, and transformed throughout the play.
+<br>
+<br>
+directed by miriam ohlmeyer und kieana shirzadeh semsar
+writing, finance: kiki ludvik
+light: lucy schreiber
+press: luisa lutter und johannes ayrle
+grafic: dwayne shepherd
+sound: silvius sonvilla
+<br>
+<br>
+actors: isabelle bonin, simon conrady, sabine hödl, corvin hummer, charlotte kallenberg, max konrad, gustav kortenhaus, skye macdonald, catarina pfeffer, lola peuerböck, julia katharina schmidt, wieda shirzadeh semsar, 
+alma sonvilla, silvius sonvilla, herik thomas, david rathbauer
         </c>
+
+
+<script>
+            // Function to update gl effects based on checkbox status
+            function updateglEffects() {
+                const instChecked = document.getElementById('inst').checked;
+                const specChecked = document.getElementById('spec').checked;
+                const archChecked = document.getElementById('arch').checked;
+        
+                const wordsinst = document.querySelectorAll('.inst');
+                const wordsspec = document.querySelectorAll('.spec');
+                const wordsarch = document.querySelectorAll('.arch');
+        
+                // Reset all gl effects first
+                document.querySelectorAll('.gl').forEach(word => {
+                    word.classList.remove('gl-inst', 'gl-spec', 'gl-arch');
+                });
+        
+                // Apply the gl effect based on checkbox selection
+                if (instChecked) {
+                    wordsinst.forEach(word => word.classList.add('gl-inst'));
+                }
+                if (specChecked) {
+                    wordsspec.forEach(word => word.classList.add('gl-spec'));
+                }
+                if (archChecked) {
+                    wordsarch.forEach(word => word.classList.add('gl-arch'));
+                }
+        
+                // Store checkbox states in sessionStorage to persist for this session
+                sessionStorage.setItem('instChecked', instChecked);
+                sessionStorage.setItem('specChecked', specChecked);
+                sessionStorage.setItem('archChecked', archChecked);
+            }
+        
+            // Function to restore checkbox states from sessionStorage
+            function restoreCheckboxStates() {
+                const instChecked = sessionStorage.getItem('instChecked') === 'true';
+                const specChecked = sessionStorage.getItem('specChecked') === 'true';
+                const archChecked = sessionStorage.getItem('archChecked') === 'true';
+        
+                // Set the checkboxes to the stored states
+                document.getElementById('inst').checked = instChecked;
+                document.getElementById('spec').checked = specChecked;
+                document.getElementById('arch').checked = archChecked;
+        
+                // Update gl effects based on restored states
+                updateglEffects();
+            }
+        
+            // Attach event listeners to checkboxes to update gl effect on change
+            document.getElementById('inst').addEventListener('change', updateglEffects);
+            document.getElementById('spec').addEventListener('change', updateglEffects);
+            document.getElementById('arch').addEventListener('change', updateglEffects);
+        
+            // Restore checkbox states when the page loads
+            window.addEventListener('load', restoreCheckboxStates);
+        </script>
+        
+        
+
+</body>
+</html>
