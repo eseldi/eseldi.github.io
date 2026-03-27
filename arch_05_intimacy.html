@@ -20,6 +20,7 @@
                 <label><input type="checkbox" id="inst"> installation //</label>
                 <label ><input type="checkbox" id="spec"> speculative //</label>
                 <label ><input type="checkbox" id="arch"> architecture //</label>
+                <label ><input type="checkbox" id="teach"> teaching //</label>
             </div>
         </div>
     </nav>
@@ -27,28 +28,42 @@
     <!-- Content -->
     <div class="content">
         <p>
-            
+           <!-- / <a href="./inst_14_archade.html" class="gl inst">archade WIP</a> -->
+            / <a href="./teach_07_designingfornpcs.html" class="gl teach">designing for NPCs WIP</a>
+           <!-- / <a href="./inst_13_soundbites.html" class="gl inst">soundbites WIP</a> -->
+           <!-- / <a href="./teach_06_creativecomputation.html" class="gl teach">creative computation WIP</a> -->
+            / <a href="./teach_05_howtodesignintensive.html" class="gl teach">how to design intensive</a>
+            / <a href="./inst_12_rundry.html" class="gl inst">rundry</a>
+            / <a href="./teach_04_core1.html" class="gl teach">core 1</a>
+            / <a href="./spec_07_sensingbuildings.html" class="gl spec">sensing buildings</a>
+            / <a href="./inst_11_finalinch.html" class="gl inst">final inch</a>
+            / <a href="./inst_10_publiceyes.html" class="gl inst">public eyes</a>
+            / <a href="./teach_01_Neu_FundamentalDesignStudio.html" class="gl teach">how to design studio</a>
+            / <a href="./inst_09_luna.html" class="gl inst">luna</a>
+            / <a href="./teach_02_tinyfab.html" class="gl teach">tinyfab</a>
             / <a href="./inst_08_TerraByte.html" class="gl inst">terrabyte</a>
-            / <a href="./arch_12_publictothepublic.html" class="gl arch">public to the public</a>
+           <!-- / <a href="./inst_06_dailypaper.html" class="gl inst">daily paper</a> -->
+           <!-- / <a href="./inst_05_chairpants.html" class="gl inst">chairpants</a> -->
+           <!-- / <a href="./inst_04_uselessumbrella.html" class="gl inst">useless umbrella</a> -->
+            / <a href="./teach_01_Neu_FundamentalDesignStudio.html" class="gl teach">fundamental design</a>
             / <a href="./inst_07_gardenparty.html" class="gl inst">gardenparty</a>
-            / <a href="./arch_11_demolitionparty.html" class="gl arch">demolition party</a>
-            / <a href="./inst_06_dailypaper.html" class="gl inst">daily paper</a>
-            / <a href="./arch_10_updownthetoilet.html" class="gl arch">up/down the toilet</a>
-            / <a href="./inst_05_chairpants.html" class="gl inst">chairpants</a>
-            / <a href="./inst_04_uselessumbrella.html" class="gl inst">useless umbrella</a>
+            / <a href="./arch_12_publictothepublic.html" class="gl arch">public to the public</a>
             / <a href="./spec_05_creek.html" class="gl spec">creek</a>
-            / <a href="./arch_08_whatyouseeiswhatyouget.html" class="gl arch">what-you-see-is-what-you-get</a>
             / <a href="./spec_06_hoses.html" class="gl spec">hoses</a>
+            / <a href="./arch_11_demolitionparty.html" class="gl arch">demolition party</a>
+            / <a href="./arch_10_updownthetoilet.html" class="gl arch">up/down the toilet</a>
             / <a href="./inst_03_treecult.html" class="gl inst">tree cult</a>
+            / <a href="./arch_08_whatyouseeiswhatyouget.html" class="gl arch">what-you-see-is-what-you-get</a>
+            / <a href="./spec_04_stillavailable.html" class="gl spec">still available</a>
             / <a href="./arch_07_resizedliving.html" class="gl arch">resized living</a>
             / <a href="./spec_02_riget.html" class="gl spec">riget</a>
-            / <a href="./inst_02_cubliclesdigest.html" class="gl inst">cubicles digest</a>
+            / <a href="./arch_03_serpenthouse.html" class="gl arch">serpent house</a>
             / <a href="./arch_06_flux.html" class="gl arch">flux</a>
             / <a href="./inst_01_andorra.html" class="gl inst">andorra</a>
             / <a href="./arch_05_intimacy.html" class="gl arch"><b>intimacy</b></a>
-            / <a href="./spec_04_stillavailable.html" class="gl spec">still available</a>
+            / <a href="./inst_02_cubliclesdigest.html" class="gl inst">cubicles digest</a>
             / <a href="./arch_04_studioextension.html" class="gl arch">studio extension</a>
-            / <a href="./arch_03_serpenthouse.html" class="gl arch">serpent house</a>
+            
         </p>
     </div>
 
@@ -91,20 +106,22 @@
         </c>
 
 
-        <script>
+<script>
             // Function to update gl effects based on checkbox status
             function updateglEffects() {
                 const instChecked = document.getElementById('inst').checked;
                 const specChecked = document.getElementById('spec').checked;
                 const archChecked = document.getElementById('arch').checked;
+                const teachChecked = document.getElementById('teach').checked;
         
                 const wordsinst = document.querySelectorAll('.inst');
                 const wordsspec = document.querySelectorAll('.spec');
                 const wordsarch = document.querySelectorAll('.arch');
+                const wordsteach = document.querySelectorAll('.teach');
         
                 // Reset all gl effects first
                 document.querySelectorAll('.gl').forEach(word => {
-                    word.classList.remove('gl-inst', 'gl-spec', 'gl-arch');
+                    word.classList.remove('gl-inst', 'gl-spec', 'gl-arch', 'gl-teach');
                 });
         
                 // Apply the gl effect based on checkbox selection
@@ -117,11 +134,15 @@
                 if (archChecked) {
                     wordsarch.forEach(word => word.classList.add('gl-arch'));
                 }
+                if (teachChecked) {
+                    wordsteach.forEach(word => word.classList.add('gl-teach'));
+                }
         
                 // Store checkbox states in sessionStorage to persist for this session
                 sessionStorage.setItem('instChecked', instChecked);
                 sessionStorage.setItem('specChecked', specChecked);
                 sessionStorage.setItem('archChecked', archChecked);
+                sessionStorage.setItem('teachChecked', teachChecked);
             }
         
             // Function to restore checkbox states from sessionStorage
@@ -129,11 +150,13 @@
                 const instChecked = sessionStorage.getItem('instChecked') === 'true';
                 const specChecked = sessionStorage.getItem('specChecked') === 'true';
                 const archChecked = sessionStorage.getItem('archChecked') === 'true';
+                const teachChecked = sessionStorage.getItem('teachChecked') === 'true';
         
                 // Set the checkboxes to the stored states
                 document.getElementById('inst').checked = instChecked;
                 document.getElementById('spec').checked = specChecked;
                 document.getElementById('arch').checked = archChecked;
+                document.getElementById('teach').checked = teachChecked;
         
                 // Update gl effects based on restored states
                 updateglEffects();
@@ -143,6 +166,7 @@
             document.getElementById('inst').addEventListener('change', updateglEffects);
             document.getElementById('spec').addEventListener('change', updateglEffects);
             document.getElementById('arch').addEventListener('change', updateglEffects);
+            document.getElementById('teach').addEventListener('change', updateglEffects);
         
             // Restore checkbox states when the page loads
             window.addEventListener('load', restoreCheckboxStates);

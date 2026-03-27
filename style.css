@@ -98,6 +98,10 @@
             text-shadow: 0 0 10px #00ff15, 0 0 20px #00ff15;
         }
 
+        .gl-teach {
+            text-shadow: 0 0 10px #4846d4, 0 0 20px #4846d4;
+        }
+
 
         /* Style links to look like regular text but still have the gl */
         a {
@@ -136,4 +140,9 @@
         .column {
             flex: 45%;
 
+        }
+
+        .link {
+            color: darkgreen;
+            text-decoration: underline;
         }
